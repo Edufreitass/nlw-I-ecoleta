@@ -20,6 +20,14 @@
 
     display: flex;
     align-items: center;
+    
+    transition: 400ms;
+}
+
+#page-create-point header a:hover {
+    -webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);
 }
 
 #page-create-point header a span {
@@ -36,6 +44,8 @@
 form {
     background-color: white;
 
+    transition: box-shadow .3s;
+
     margin: 80px auto;
     /* preenchimento, aumenta o tam da caixa */
     padding: 64px;
@@ -44,6 +54,10 @@ form {
 
     max-width: 730px;
 
+}
+
+form:hover{
+    box-shadow: 0 0 18px rgba(33, 33, 33, .2);
 }
 
 form h1 {
@@ -89,6 +103,16 @@ form select {
     /* outline: none; */
 }
 
+form input {
+    transition: box-shadow .3s;
+    font-family: Roboto, sans-serif;
+    font-size: 18px;
+}
+
+form input:hover {
+    box-shadow: 0 0 18px rgba(33, 33, 33, .2);
+}
+
 form select {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -96,8 +120,10 @@ form select {
 }
 
 form label {
-    font-size: 14px;
+    font-size: 19px;
     margin-bottom: 8px;
+    font-family: Ubuntu, sans-serif;
+    color: var(--title-color);
 }
 
 /* 
@@ -129,9 +155,18 @@ form button {
     margin-top: 40px;
 
     transition: background-color 400ms;
-
+    transition: 400ms;
 }
 
 form button:hover {
     background-color: #2fb86e;
+    -webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);
+}
+
+form select {
+    font-size: 18px;
+    color: black;
+    font-family: Roboto, sans-serif;
 }

@@ -44,7 +44,14 @@
 
     color: var(--title-color);
     font-weight: 700;
+    
+    transition: 400ms;
+}
 
+#page-home header a:hover {
+    -webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);
 }
 
 #page-home header a span {

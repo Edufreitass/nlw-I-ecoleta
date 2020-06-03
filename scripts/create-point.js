@@ -35,6 +35,7 @@ function getCities(event){
 
     const url = `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${ufValue}/municipios`
 
+    // Nessas duas linhas de código, sera feita a limpeza do campo, caso seja escolhido outro estado, dessa forma, nao ficaram cidades acumuladas.
     citySelect.innerHTML = "<option value>Selecione a Cidade</option>"
     citySelect.disabled = true
 
@@ -43,7 +44,7 @@ function getCities(event){
     .then( cities => {
 
         for(const city of cities ) {
-            citySelect.innerHTML += `<option value = "${city.id}">${city.nome}</option>`
+            citySelect.innerHTML += `<option value = "${city.nome}">${city.nome}</option>`
         }
 
         citySelect.disabled = false
@@ -76,3 +77,59 @@ document
         console.log("mudei");
     } );
 */
+
+// Itens de coleta
+
+// pegar todos os li's
+const itemsToCollect = document.querySelectorAll(".items-grid li");
+
+for(const item of itemsToCollect) {
+    item.addEventListener("click", handleSelectedItem);
+}
+
+const collectedItems = document.querySelector("input[name=items]")
+
+let selectedItems = [];
+
+function handleSelectedItem(event){
+    
+    const itemLi = event.target;
+    // adicionar ou remover uma classe com JS
+    itemLi.classList.toggle("selected"); // toggle faz o adicionar ou remover
+    // itemLi.classList.add("selected")
+    // itemLi.classList.remove("selected")
+ 
+    // quando houver o evento de click, o id do elemento sera guardado nessa variavel
+    const itemId = itemLi.dataset.id;
+
+    // verificar se existem itens selecionados, se sim
+    // pegar os itens selecionados
+    const alreadySelected = selectedItems.findIndex( item => {
+        const itemFound = item == itemId; // isso sera true ou false
+        return itemFound;
+    })
+
+    // console.log(alreadySelected >= 0);
+    // console.log(alreadySelected != -1);
+
+    // se já estivr selecionado
+    if(alreadySelected >= 0) {
+        // tirar da selecao
+        const filteredItems = selectedItems.filter( item => {
+            const itemIsDifferent = item != itemId; // false
+            return itemIsDifferent;
+        })
+
+        selectedItems = filteredItems;
+    } else {
+        // se nao estiver selecionado, adicionar a selecao
+        // adicionar a selecao
+        selectedItems.push(itemId);
+    }
+
+    // console.log(selectedItems)
+
+    // atualizar o campo escondido com os dados selecionados
+    collectedItems.value = selectedItems;
+
+}

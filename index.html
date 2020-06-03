@@ -28,6 +28,8 @@
     <!-- My Css -->
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/home.css">
+    <link rel="stylesheet" href="/styles/modal.css">
+
     <link rel="stylesheet" href="/styles/responsive.css">
 </head>
 
@@ -39,7 +41,7 @@
 
             <header>
                 <img src="/assets/icones/logo.svg" alt="Logomarca">
-                <a href="http://127.0.0.1:5500/create-point.html">
+                <a href="create-point.html">
                     <span></span>
                     Cadastre um ponto de coleta</a>
             </header>
@@ -55,5 +57,28 @@
         </div>
     </div>
 
+    <!-- Modal -->
+    <div id="modal" class="hide">
+        <div class="content">
+            <div class="header">
+                <h1>Pontos de Coleta</h1>
+                <a href="#">Fechar</a>
+            </div>
+            <form action="/search-results.html">
+                <label for="search">Cidade</label>
+                <div class="search field">
+                    <input 
+                    type="text" 
+                    name="search"
+                    placeholder="Pesquise por cidade">
+                    <button>
+                        <img src="/assets/icones/search.svg" alt="Buscar">
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="scripts/index.js"></script>
 </body>
 </html>

@@ -51,7 +51,8 @@
 }
 
 #modal form label {
-    font-size: 14px;
+    font-size: 20px;
+    font-family: Roboto, sans-serif;
     line-height: 16px;
 
     display: block;

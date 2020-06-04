@@ -235,27 +235,6 @@ footer .content-footer {
     padding-top: 35px;
 }
 
-footer .copyright {
-    position: relative;
-    background-color: #121214;
-    width: 100%;
-    left: 0;
-    bottom: 0;
-}
-
-footer .copyright h1 {
-    width: 90%;
-    max-width: 1100px;
-    margin: 0 auto;
-    color: white;
-    font-family: Roboto;
-    font-size: 23px;
-    font-weight: normal;
-    text-align: center;
-    padding-bottom: 25px;
-}
-
-footer .copyright h1 span {
-    color: #7159C1;
-    font-family: Ubuntu;
+footer span {
+    color: rgb(113, 89, 193);
 }

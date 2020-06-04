@@ -1,30 +1,30 @@
 
-function populateUFs(){
+function populateUFs() {
     const ufSelect = document.querySelector("select[name=uf]")
 
     // Faz a busca de todos os estados
     fetch("https://servicodados.ibge.gov.br/api/v1/localidades/estados")
 
-    // Uma forma de fazer uma arrow function
-    // .then( (res) => { return res.json })
+        // Uma forma de fazer uma arrow function
+        // .then( (res) => { return res.json })
 
-    // Outra forma de fazer uma arrow function
-    // Função anônima que esta retornando um valor
-    .then( res => res.json() ) // retorna a resposta e transforma essa res em JSON
-    // Função que recebe todos os estados e contem um laço para inserir todos eles no html
-    .then( states => {
+        // Outra forma de fazer uma arrow function
+        // Função anônima que esta retornando um valor
+        .then(res => res.json()) // retorna a resposta e transforma essa res em JSON
+        // Função que recebe todos os estados e contem um laço para inserir todos eles no html
+        .then(states => {
 
-        // Estrutura de repetição para percorrer todos os estados
-        for(const state of states ) {
-            ufSelect.innerHTML += `<option value = "${state.id}">${state.nome}</option>`
-        }
+            // Estrutura de repetição para percorrer todos os estados
+            for (const state of states) {
+                ufSelect.innerHTML += `<option value = "${state.id}">${state.nome}</option>`
+            }
 
-    })
+        })
 }
 
 populateUFs();
 
-function getCities(event){
+function getCities(event) {
     const citySelect = document.querySelector("[name=city]") // ("select[name=city]")
     const stateInput = document.querySelector("[name=state]") // ("input[name=state]")
 
@@ -40,16 +40,16 @@ function getCities(event){
     citySelect.disabled = true
 
     fetch(url)
-    .then( res => res.json() ) 
-    .then( cities => {
+        .then(res => res.json())
+        .then(cities => {
 
-        for(const city of cities ) {
-            citySelect.innerHTML += `<option value = "${city.nome}">${city.nome}</option>`
-        }
+            for (const city of cities) {
+                citySelect.innerHTML += `<option value = "${city.nome}">${city.nome}</option>`
+            }
 
-        citySelect.disabled = false
+            citySelect.disabled = false
 
-    } )
+        })
 }
 
 document
@@ -83,7 +83,7 @@ document
 // pegar todos os li's
 const itemsToCollect = document.querySelectorAll(".items-grid li");
 
-for(const item of itemsToCollect) {
+for (const item of itemsToCollect) {
     item.addEventListener("click", handleSelectedItem);
 }
 
@@ -91,20 +91,20 @@ const collectedItems = document.querySelector("input[name=items]")
 
 let selectedItems = [];
 
-function handleSelectedItem(event){
-    
+function handleSelectedItem(event) {
+
     const itemLi = event.target;
     // adicionar ou remover uma classe com JS
     itemLi.classList.toggle("selected"); // toggle faz o adicionar ou remover
     // itemLi.classList.add("selected")
     // itemLi.classList.remove("selected")
- 
+
     // quando houver o evento de click, o id do elemento sera guardado nessa variavel
     const itemId = itemLi.dataset.id;
 
     // verificar se existem itens selecionados, se sim
     // pegar os itens selecionados
-    const alreadySelected = selectedItems.findIndex( item => {
+    const alreadySelected = selectedItems.findIndex(item => {
         const itemFound = item == itemId; // isso sera true ou false
         return itemFound;
     })
@@ -113,9 +113,9 @@ function handleSelectedItem(event){
     // console.log(alreadySelected != -1);
 
     // se já estivr selecionado
-    if(alreadySelected >= 0) {
+    if (alreadySelected >= 0) {
         // tirar da selecao
-        const filteredItems = selectedItems.filter( item => {
+        const filteredItems = selectedItems.filter(item => {
             const itemIsDifferent = item != itemId; // false
             return itemIsDifferent;
         })

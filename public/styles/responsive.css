@@ -56,3 +56,9 @@
         background-position-y: 200px;
     }
 }
+
+@media(max-width: 600px) {
+    .items-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}

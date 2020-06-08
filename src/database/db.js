@@ -93,22 +93,22 @@ db.serialize(() => {
     
 //     // O terceiro argumento é um callback(resposta), que recebe dois parametros,
 //     // o primeiro são os erros e o segundo sao os registros(rows, os arrays)
-//     // db.all(`SELECT * FROM places`, function(err, rows) {
-//     //     if(err) {
-//     //         return console.log(err);
-//     //     }
+    // db.all(`SELECT * FROM places`, function(err, rows) {
+    //     if(err) {
+    //         return console.log(err);
+    //     }
 
-//     //     // Caso não haja erros, imprima...
-//     //     console.log("Aqui estão seus registros!");
-//     //     console.log(rows);
-//     // })
+    //     // Caso não haja erros, imprima...
+    //     console.log("Aqui estão seus registros!");
+    //     console.log(rows);
+    // })
 
 //     // 4 Deletar um dado da tabela
 
 //     // Para remover um registro da tabela passando uma condiçao,
 //     // quando colocamos '?', precisamos passar uma coleção logo em seguida,
 //     // para dizer qual registro que sera removido
-    // db.run(`DELETE FROM places WHERE id = ?`, [5], function(err){
+    // db.run(`DELETE FROM places WHERE id = ?`, [9], function(err){
     //     if(err) {
     //         return console.log(err);
     //     }

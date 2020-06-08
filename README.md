@@ -1,6 +1,6 @@
 # Next Level Week(NLW) - Rockeseat :rocket:
 
-#### Repositório do projeto ECOLETA:recycle: , apresentado no Next Level Week da Rockeseat, ministrado pelo[Mayk Brito](https://github.com/maykbrito) .
+#### :arrow_right: Repositório do projeto ECOLETA:recycle: , apresentado no Next Level Week da Rockeseat, ministrado pelo [Mayk Brito](https://github.com/maykbrito) .
 
 ![ecoleta-home](https://user-images.githubusercontent.com/56324728/83991314-bfcbad00-a922-11ea-86d3-c5f1ed4aba31.png)
 
